@@ -1,0 +1,8 @@
+selenium==3.141.0
+pymysql==1.0.3
+
+pony==0.7.17
+pytest==7.4.3
+
+urllib3==1.26.18
+
