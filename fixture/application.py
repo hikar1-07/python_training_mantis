@@ -2,11 +2,12 @@ from selenium import webdriver
 
 from fixture.session import SessionHelper
 from selenium.webdriver.support.ui import Select
+from fixture.project import ProjectHelper
 
 
 class Application:
 
-    def __init__(self, browser, base_url):
+    def __init__(self, browser, web_config):
         if browser == "chrome":
             self.wd = webdriver.Chrome()
         elif browser == "firefox":
@@ -19,7 +20,8 @@ class Application:
         self.wd.implicitly_wait(2)
         self.session = SessionHelper(self)
         self.Select = Select
-        self.base_url = base_url
+        self.base_url = web_config['baseUrl']
+        self.project = ProjectHelper(self)
 
     def is_valid(self):
         try:
