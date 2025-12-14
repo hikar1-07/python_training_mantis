@@ -1,3 +1,4 @@
+suds
 selenium==3.141.0
 pymysql==1.0.3
 
@@ -6,3 +7,4 @@ pytest==7.4.3
 
 urllib3==1.26.18
 
+setuptools==56.2.0
