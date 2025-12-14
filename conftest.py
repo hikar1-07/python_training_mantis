@@ -11,10 +11,10 @@ target = None
 def app(request, config):
     global fixture
     browser = request.config.getoption("--browser")
-    web_config = config['web']
-    webadmin_config =config["webadmin"]
+    # web_config = config['web']
     if fixture is None or not fixture.is_valid():
-        fixture = Application(browser=browser, web_config=web_config)
+        fixture = Application(browser=browser, config=config)
+    webadmin_config = config["webadmin"]
     fixture.session.ensure_login(
         username=webadmin_config['username'],
         password=webadmin_config['password']
